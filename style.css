@@ -238,14 +238,27 @@ nav ul li a.active {
   .social-box img { width: 60px; height: 60px; }
 }
 
-img{
-  width: 400px;
+/* Resume images */
+.resume-img{
+    width:400px;
+    height:auto;
+    margin-bottom:20px;
 }
 
-@media (max-width: 768px){
-  img {
-    width: 200px;
-  }
+/* Mobile only */
+@media (max-width:768px){
+
+    .resume-img{
+        width:200px;
+        height:auto;
+    }
+
+    /* Only second page */
+    .second-resume{
+        width:200px;
+        height:282px; /* adjust to match page 1 */
+        object-fit:contain;
+    }
 }
 
 .btn{
