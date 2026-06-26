@@ -1,299 +1,1010 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Harish T | Full Stack Developer Portfolio</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="Harish T | Full Stack Developer Portfolio">
-  <meta name="description" content="Harish T - Full Stack Developer and Computer Science Engineering student. Explore my projects, skills, experience, portfolio, internships, and resume.">
-  <meta name="keywords" content="Harish T, Full Stack Developer, Python Developer, Web Developer, React Developer, Flask Developer, Portfolio, Computer Science Student, HTML CSS JavaScript, GitHub, AI Projects">
-  <meta name="description" content="Harish T - Computer Science and Engineering (CSE) student at Rajiv Gandhi College of Engineering and Technology, Full Stack Developer skilled in Python, Flask, React.js, HTML, CSS, JavaScript, and web development projects.">
-  <meta name="keywords" content="Harish T, Harish T CSE Student, Harish CSE Student, Harish Rajiv Gandhi College of Engineering and Technology, Harish Full Stack Developer, Harish Portfolio, Computer Science Student, Python Developer, Flask Developer, React Developer">
-  <meta name="author" content="Harish T">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Harish T | Full Stack Developer Portfolio">
-  <meta property="og:description" content="Explore Harish T's portfolio including projects, skills, education, and experience in Full Stack Development.">
-  <meta property="og:image" content="profile2.jpeg">
-  <meta property="og:url" content="https://harish-t24.github.io/Harish.t_Portfolio.github.io/">
-  <meta property="og:type" content="Harish.t_Portfolio">
-  <link rel="canonical" href="https://harish-t24.github.io/Harish.t_Portfolio.github.io/">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harish T | Full Stack Developer</title>
+
+    <meta name="description"
+        content="Harish T - Full Stack Developer, Python Developer and Computer Science Engineering Student Portfolio">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
 </head>
+
 <body>
-  <canvas id="stars"></canvas>
 
-  <!-- ===== Navbar ===== -->
-  <nav>
-    <div class="logo"  style="color: blueviolet;">My Portfolio</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul id="nav-links">
-      <li><a class="active" onclick="showSection('home')">Home</a></li>
-      <li><a onclick="showSection('about')">About me</a></li>
-      <li><a onclick="showSection('skills')">Skills</a></li>
-      <li><a onclick="showSection('education')">Education</a></li>
-      <li><a onclick="showSection('projects')">Projects</a></li>
-      <li><a onclick="showSection('experience')">Experience</a></li>
-      <li><a onclick="showSection('resume')">Resume</a></li>
-      <li><a onclick="showSection('contact')">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- =========================
+            STAR BACKGROUND
+    ========================== -->
 
-  <!-- ===== Sections ===== -->
-  <section id="home" class="content-section">
-    <div class="intro-section">
-      <div class="intro-text">
-        <h1  style="font-size: 28px;">Welcome to My Portfolio</h1>
-        <h1 style="color: lightcoral; font-size: 36px;">Harish T</h1>
-        <h2>A <span style="color: lightgreen; font-size: 32px;">Full Stack Developer</span></h2>
-        <p>Welcome to my portfolio website. Here you’ll find my skills, education, projects, experience, resume, and how to contact me.</p>
-      </div>
-      <div class="intro-image">
-        <img src="profile2.jpeg" alt="Profile Picture">
-      </div>
-    </div>
-  </section>
+    <canvas id="stars"></canvas>
 
-  <section id="about" class="content-section">
-    <h1 style="padding: 30px;">About Me</h1>
-    <h2 style="padding: 30px; color: lightcoral;">Full Stack Developer</h2>
-    <h2 style="padding: 30px; color: lightgreen;">Class Representative</h2>
-    <p style="padding: 50px;">
-        I am Harish T., a pre-final B.Tech Computer Science and Engineering student at Rajiv Gandhi College of Engineering and Technology, specializing in Full Stack Development. 
-        Passionate about building scalable, efficient, and user-friendly web applications with strong problem-solving skills. 
-        Eager to apply my technical knowledge to real-world challenges in the tech industry. 
-        A quick learner and dedicated team player, always seeking opportunities to grow, innovate, and contribute to impactful projects.
-      </p>
-  </section>
+    <!-- =========================
+            NAVBAR
+    ========================== -->
 
-  <section id="skills" class="content-section">
-    <h1 style="padding: 30px;">My Skills</h1>
-  <ul style="padding: 50px;">
-    <li>Programming Languages: Python, Java</li>
-    <li>Web Technologies: HTML, CSS, JavaScript, Bootstrap</li>
-    <li>Frameworks & Libraries: Flask, React.js</li>
-    <li>Databases: MySQL, SQLite, MongoDB</li>
-    <li>Tools & Platforms: Git, GitHub, VS Code, AWS </li>
-    <li>Soft Skills: Problem Solving, Debugging, Teamwork, Communication, Leadership</li>
-    <li>Concepts: Object-Oriented Programming, Data Structures, Algorithms, CRUD Operations</li>
-    <li>Languages Known: English, Tamil </li>
-  </ul>
-  </section>
+    <nav>
 
-  <section id="education" class="content-section">
-    <h1 style="padding: 30px;">Education Qualification</h1>
-    <ul style="padding: 50px;">
-    <h3>RAJIV GANDHI COLLEGE OF ENGINEERING & TECHNOLOGY, PUDUCHERRY </h3>
-    <p>Bachelor of Technology in Computer Science and Engineering – 2023-27 Batch </p>
-    <p>CGPA – 8.94/10 </p>
-<br>
-    <h3>ACHARIYA SIKSHA MANDIR HR. SEC. SCHOOL, PUDUCHERRY </h3>
-    12th Standard (HSC) 
-    Year of Passing: 2023 | Percentage – 81%
-  </ul>
-  </section>
+        <div class="logo">
+            Harish <span>T</span>
+        </div>
 
-  <section id="projects" class="content-section">
-    <h1 style="padding: 30px;">Projects</h1>
-    <ul style="padding: 50px;">
-    <h3>Mini Project - AI Based Portfolio Builder with Admin Dashboard (for academic) - 
-    <a href="https://portfolio-builder-gir9.onrender.com" target="_blank" style="color: rgb(0, 166, 255); text-decoration: underline;">View Project</a></h3>
-    <h4>Domain: AI-Based Web Application Development</h4>
-    <p> •	Developed an AI-powered portfolio generation system using Flask and SQLite supporting dynamic portfolio creation and admin management with CRUD operations.<br>
-        •	Reduced manual portfolio creation effort by approximately 60%.
-    </p>
-    <br>
-    <h3>Student Performance Analyzer - 
-    <a href="http://Aatishash.pythonanywhere.com" target="_blank" style="color: rgb(0, 166, 255); text-decoration: underline;">View Project</a>
-    </h3>
-    <p> •	Built a CGPA calculator for Pondicherry University students with semester-wise GPA calculation and Excel export functionality. <br>
-        •	Automated academic calculations to reduce manual effort and improve accuracy.
-    </p>
-    <br>
-    <h3>Smart India Hackathon 2024</h3>
-    <p>Topic : Explore TamilNadu (Suggest best places to visit in TamilNadu)<br>
-        •	Designed a travel recommendation platform with location-based suggestions to help users discover suitable tourist destinations. 
-    </p>
-  </ul>
-  </section>
+        <div class="menu-toggle" id="menu-toggle">
 
-  <section id="experience" class="content-section">
-    <h1 style="padding: 30px;">Experience</h1>
-    <ul style="padding: 50px;">
-    <h3>Remote Internship – Cognifyz Technologies</h3>
-    <h4>Duration : 1 Months</h4>
-      <p> •	Basic HTML Pagesteps, styling with Inline CSS<br>
-          •	Responsive Design, Interactive Button, API Integration<br>
-          •	Done a assigned projects using the learned skills
-      </p>
-    <br>
-    <h3>Remote Internship – Shine Craft Technologies</h3>
-    <h4>Duration : 6 Months (Ongoing)</h4>
-      <p>Worked:<br>
-          •	Performed functional testing on a Gold Loan web application using Test Cases.<br>
-•	Feedback Form Website: Designed a responsive React-based Feedback Form application with reusable UI components, enhancing accessibility and user experience.<br>
-•	File Management System Desktop Application: Built a desktop-based File Management System using Flask and Electron with CRUD functionality, improving record organization and reducing manual effort by approximately 50%.
+            <span></span>
+            <span></span>
+            <span></span>
 
-      </p>
-  </ul>
-  </section>
+        </div>
 
-<section id="resume" class="content-section">
-  <h1 style="padding:30px;">Resume</h1>
+        <ul id="nav-links">
 
-  <center>
-    <img class="resume-img" src="Harish_Resume1.png" alt="Resume">
+            <li>
+                <a class="active" onclick="showSection('home',event)">
+                    Home
+                </a>
+            </li>
 
-    <img class="resume-img second-resume"
-         src="Harish_Resume2.png"
-         alt="Resume">
-  </center>
+            <li>
+                <a onclick="showSection('about',event)">
+                    About
+                </a>
+            </li>
 
-  <a href="Harish_Resume.pdf" download class="btn">
-    Download Resume PDF
-  </a>
-</section>  
+            <li>
+                <a onclick="showSection('skills',event)">
+                    Skills
+                </a>
+            </li>
 
-  <section id="contact" class="content-section">
-    <h1 style="padding: 30px;">Contact Me</h1>
-    <p style="padding: 50px;">Email: harish.t7708@gmail.com<br>
-    </p>
-     <section>
-  <div class="social-container">
+            <li>
+                <a onclick="showSection('education',event)">
+                    Education
+                </a>
+            </li>
 
-    <div class="social-item">
-      <a href="https://www.linkedin.com/in/harish-t7708"
-         target="_blank"
-         class="social-box linkedin">
-        <img src="linkedin.png" alt="LinkedIn">
-      </a>
+            <li>
+                <a onclick="showSection('projects',event)">
+                    Projects
+                </a>
+            </li>
 
-      <p>
-        LinkedIn - https://www.linkedin.com/in/harish-t7708
-      </p><br><br>
+            <li>
+                <a onclick="showSection('experience',event)">
+                    Experience
+                </a>
+            </li>
 
-      <a href="https://github.com/harish-t24"
-       target="_blank"
-       class="social-box github">
-      <img src="github.png" alt="GitHub">
-      </a>
-      <p>
-        GitHub - https://github.com/harish-t24
-      </p><br><br>
+            <li>
+                <a onclick="showSection('resume',event)">
+                    Resume
+                </a>
+            </li>
 
-    <a href="https://wa.me/917708911399"
-       target="_blank"
-       class="social-box whatsapp">
-      <img src="whatsapp.png" alt="WhatsApp">
-    </a>
-    <p>
-      WhatsApp - https://wa.me/917708911399
-    </p><br><br>
+            <li>
+                <a onclick="showSection('contact',event)">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- =========================
+            HOME SECTION
+    ========================== -->
+
+    <section id="home" class="content-section">
+
+        <div class="intro-section">
+
+            <div class="intro-text">
+
+                <h3>Hello 👋 I'm</h3>
+
+                <h1>
+                    Harish <span class="highlight">T</span>
+                </h1>
+
+                <h2>
+
+                    <span class="highlight-purple">
+                        Full Stack Developer
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Passionate Full Stack Developer and Computer Science Engineering student
+                    specializing in Python, Flask, React.js, JavaScript, SQL, and AI-powered
+                    web applications.
+
+                    I enjoy building scalable, responsive, and user-friendly applications
+                    that solve real-world problems.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a onclick="showSection('projects',event)"
+                        class="btn btn-primary">
+
+                        View Projects
+
+                    </a>
+
+                    <a onclick="showSection('contact',event)"
+                        class="btn btn-outline">
+
+                        Contact Me
+
+                    </a>
+
+                </div>
+
+                <div class="hero-social">
+
+                    <a href="https://github.com/harish-t24"
+                        target="_blank">
+
+                        <i class="fab fa-github"></i>
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/harish-t7708"
+                        target="_blank">
+
+                        <i class="fab fa-linkedin"></i>
+
+                    </a>
+
+                    <a href="https://www.instagram.com/harish.t_24"
+                        target="_blank">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+                    <a href="https://wa.me/917708911399"
+                        target="_blank">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="intro-image">
+
+                <img src="profile2.jpeg"
+                    alt="Harish T">
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- =========================
+            ABOUT SECTION
+    ========================== -->
+
+    <section id="about" class="content-section">
+
+        <h1 class="section-title">
+            About Me
+        </h1>
+
+        <div class="about-container">
+
+            <h2>
+                Full Stack Developer
+            </h2>
+
+            <p>
+
+                Hello! I'm <strong>Harish T</strong>, a passionate
+                <strong>Computer Science and Engineering</strong> student at
+                <strong>Rajiv Gandhi College of Engineering and Technology,
+                Puducherry</strong>.
+
+                <br><br>
+
+                I specialize in building modern, responsive and scalable web
+                applications using
+                <strong>Python, Flask, React.js, HTML, CSS,
+                JavaScript, SQL and AI technologies.</strong>
+
+                <br><br>
+
+                I enjoy solving real-world problems through technology and
+                continuously improving my programming, problem-solving and
+                leadership skills.
+
+            </p>
+
+            <br>
+
+            <h2>
+                Career Objective
+            </h2>
+
+            <p>
+
+                To obtain a challenging Software Developer position where I can
+                apply my technical knowledge, continuously learn new
+                technologies, and contribute to innovative software solutions.
+
+            </p>
+
+        </div>
+
+    </section>
 
 
-    <a href="https://www.instagram.com/harish.t_24"
-       target="_blank"
-       class="social-box instagram">
-      <img src="instagram.png" alt="Instagram">
-    </a>
-    <p>
-      Instagram - https://www.instagram.com/harish.t_24
-    </p>
-    </div>
+    <!-- =========================
+            SKILLS SECTION
+    ========================== -->
 
-  </div>
-</section>
-  </section>
+    <section id="skills" class="content-section">
 
-  <!-- ===== JavaScript ===== -->
-  <script>
-    // Toggle mobile menu
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+        <h1 class="section-title">
+            Technical Skills
+        </h1>
 
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("open");
-      navLinks.classList.toggle("active");
-    });
+        <div class="skills-grid">
 
-    // Show only clicked section
-    function showSection(sectionId) {
-      document.querySelectorAll(".content-section").forEach(sec => {
-        sec.style.display = "none";
-      });
+            <div class="skill-card">
 
-      document.getElementById(sectionId).style.display = "block";
+                <i class="fa-brands fa-python"></i>
 
-      // Highlight active menu item
-      document.querySelectorAll("nav ul li a").forEach(link => {
-        link.classList.remove("active");
-      });
-      event.target.classList.add("active");
+                <h3>Programming</h3>
 
-      // Close menu after click (for mobile)
-      navLinks.classList.remove("active");
-      menuToggle.classList.remove("open");
-    }
-  </script>
-  <script>
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
+                <p>
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+                    Python<br>
+                    Java<br>
+                    C++
 
-window.addEventListener("resize",()=>{
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
-});
+                </p>
 
-let particles=[];
+            </div>
 
-for(let i=0;i<300;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        radius:Math.random()*2,
-        speed:Math.random()*2+0.5
-    });
-}
+            <div class="skill-card">
 
-function animate(){
+                <i class="fa-solid fa-code"></i>
 
-    ctx.fillStyle="#0d1117";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
+                <h3>Frontend</h3>
 
-    particles.forEach(p=>{
+                <p>
 
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+                    HTML5<br>
+                    CSS3<br>
+                    JavaScript<br>
+                    Bootstrap<br>
+                    React.js
 
-        ctx.fillStyle=
-        `rgba(0,255,255,${Math.random()})`;
+                </p>
 
-        ctx.fill();
+            </div>
 
-        p.y -= p.speed;
+            <div class="skill-card">
 
-        if(p.y<0){
-            p.y=canvas.height;
-            p.x=Math.random()*canvas.width;
-        }
-    });
+                <i class="fa-solid fa-server"></i>
 
-    requestAnimationFrame(animate);
-}
+                <h3>Backend</h3>
 
-animate();
-</script>
-<!-- FOOTER -->
-    <footer style="color: blue; text-align: center;">
-      <p>&copy; 2025 Harish T. All rights reserved.</p>
+                <p>
+
+                    Flask<br>
+                    REST API<br>
+                    CRUD Operations
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>Database</h3>
+
+                <p>
+
+                    MySQL<br>
+                    SQLite<br>
+                    MongoDB
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <h3>Tools</h3>
+
+                <p>
+
+                    Git<br>
+                    GitHub<br>
+                    VS Code<br>
+                    AWS
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Soft Skills</h3>
+
+                <p>
+
+                    Leadership<br>
+                    Communication<br>
+                    Teamwork<br>
+                    Problem Solving
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+            EDUCATION
+    ========================== -->
+
+    <section id="education" class="content-section">
+
+        <h1 class="section-title">
+            Education
+        </h1>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <span class="education-year">
+
+                    2023 - 2027
+
+                </span>
+
+                <h2>
+
+                    Bachelor of Technology
+
+                </h2>
+
+                <h3>
+
+                    Computer Science & Engineering
+
+                </h3>
+
+                <p>
+
+                    Rajiv Gandhi College of Engineering & Technology,
+                    Puducherry
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    CGPA :
+                    <strong>8.94 / 10</strong>
+
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <span class="education-year">
+
+                    2023
+
+                </span>
+
+                <h2>
+
+                    Higher Secondary Education
+
+                </h2>
+
+                <h3>
+
+                    Achariya Siksha Mandir Hr. Sec. School
+
+                </h3>
+
+                <p>
+
+                    Percentage :
+                    <strong>81%</strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- =========================
+            PROJECTS
+    ========================== -->
+
+    <section id="projects" class="content-section">
+
+        <h1 class="section-title">
+            My Projects
+        </h1>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <h2>
+                    AI Portfolio Builder
+                </h2>
+
+                <h4>
+                    Flask • SQLite • AI
+                </h4>
+
+                <p>
+
+                    AI-powered portfolio generation system with Admin Dashboard,
+                    CRUD operations and dynamic portfolio creation.
+
+                </p>
+
+                <ul>
+
+                    <li>✔ AI Portfolio Generator</li>
+                    <li>✔ Admin Dashboard</li>
+                    <li>✔ CRUD Operations</li>
+                    <li>✔ SQLite Database</li>
+
+                </ul>
+                <br>
+                <p>https://portfolio-builder-gir9.onrender.com</p>
+
+                <a href="https://portfolio-builder-gir9.onrender.com"
+                    target="_blank"
+                    class="project-btn">
+
+                    Live Demo
+
+                </a>
+
+            </div>
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <h2>
+
+                    AI Placement Preparation Portal
+
+                </h2>
+
+                <h4>
+
+                    Flask • Gemini AI • SQLAlchemy
+
+                </h4>
+
+                <p>
+
+                    Complete placement preparation platform including aptitude,
+                    coding practice, interview evaluation, resume analysis,
+                    career guidance and AI chatbot.
+
+                </p>
+
+                <ul>
+
+                    <li>✔ Gemini AI</li>
+
+                    <li>✔ Resume Analysis</li>
+
+                    <li>✔ Coding Practice</li>
+
+                    <li>✔ Performance Tracking</li>
+
+                </ul>
+                <br>
+                <p>https://ai-powered-placement-preparation-and.onrender.com</p>
+
+                <a href="https://ai-powered-placement-preparation-and.onrender.com"
+                    target="_blank"
+                    class="project-btn">
+
+                    Live Demo
+
+                </a>
+
+            </div>
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <h2>
+
+                    Student Performance Analyzer
+
+                </h2>
+
+                <h4>
+
+                    Python • Flask • Excel
+
+                </h4>
+
+                <p>
+
+                    Semester-wise GPA & CGPA calculator designed for
+                    Pondicherry University students with Excel export.
+
+                </p>
+
+                <ul>
+
+                    <li>✔ GPA Calculator</li>
+
+                    <li>✔ Excel Export</li>
+
+                    <li>✔ Academic Analytics</li>
+
+                    <li>✔ Responsive UI</li>
+
+                </ul>
+                <br>
+                <p>http://Aatishash.pythonanywhere.com</p>
+
+                <a href="http://Aatishash.pythonanywhere.com"
+                    target="_blank"
+                    class="project-btn">
+
+                    Live Demo
+
+                </a>
+
+            </div>
+
+            <!-- Project 4 -->
+
+            <div class="project-card">
+
+                <h2>
+
+                    Smart India Hackathon
+
+                </h2>
+
+                <h4>
+
+                    Tourism Recommendation Platform
+
+                </h4>
+
+                <p>
+
+                    Designed an intelligent tourism recommendation website
+                    suggesting the best destinations in Tamil Nadu using
+                    location-based recommendations.
+
+                </p>
+
+                <ul>
+
+                    <li>✔ Tourist Recommendation</li>
+
+                    <li>✔ Location Based</li>
+
+                    <li>✔ User Friendly UI</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+            EXPERIENCE
+    ========================== -->
+
+    <section id="experience" class="content-section">
+
+        <h1 class="section-title">
+
+            Experience
+
+        </h1>
+
+        <div class="experience-container">
+
+            <div class="experience-card">
+
+                <span class="experience-duration">
+
+                    March 2026 - Present
+
+                </span>
+
+                <h2>
+
+                    Front-End Developer Intern
+
+                </h2>
+
+                <h3>
+
+                    Shine Craft Technologies
+
+                </h3>
+
+                <p>
+
+                    • Functional testing of Gold Loan Web Application.
+
+                    <br><br>
+
+                    • Developed React-based Feedback Form.
+
+                    <br><br>
+
+                    • Built Flask + Electron File Management System.
+
+                    <br><br>
+
+                    • Worked with CRUD Operations and Desktop Applications.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="experience-card">
+
+                <span class="experience-duration">
+
+                    1 Month
+
+                </span>
+
+                <h2>
+
+                    Web Development Intern
+
+                </h2>
+
+                <h3>
+
+                    Cognifyz Technologies
+
+                </h3>
+
+                <p>
+
+                    • Responsive Web Development
+
+                    <br><br>
+
+                    • HTML & CSS Projects
+
+                    <br><br>
+
+                    • API Integration
+
+                    <br><br>
+
+                    • Interactive User Interface
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+            ACHIEVEMENTS
+    ========================== -->
+
+    <section id="achievements" class="content-section">
+
+        <h1 class="section-title">
+
+            Achievements
+
+        </h1>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <h2>
+
+                    Smart India Hackathon 2024
+
+                </h2>
+
+                <p>
+
+                    Participated in SIH 2024 by proposing an AI-powered Tourism
+                    Recommendation Platform for Tamil Nadu.
+
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h2>
+
+                    Class Representative
+
+                </h2>
+
+                <p>
+
+                    Serving as Class Representative and coordinating academic
+                    activities while improving leadership and communication
+                    skills.
+
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h2>
+
+                    Full Stack Development
+
+                </h2>
+
+                <p>
+
+                    Developed multiple Full Stack Web Applications using Flask,
+                    React.js, Python, SQLAlchemy, Bootstrap and AI APIs.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- =========================
+            RESUME
+    ========================== -->
+
+    <section id="resume" class="content-section">
+
+        <h1 class="section-title">
+            Resume
+        </h1>
+
+        <div class="resume-container">
+
+            <img src="Resume_page1.png"
+                class="resume-img"
+                alt="Resume Page 1">
+
+            <img src="Resume_page2.png"
+                class="resume-img"
+                alt="Resume Page 2">
+
+        </div>
+
+        <center>
+
+            <a href="Harish_Resume.pdf"
+                download
+                class="download-btn">
+
+                <i class="fa-solid fa-download"></i>
+
+                Download Resume
+
+            </a>
+
+        </center>
+
+    </section>
+
+
+
+    <!-- =========================
+            CONTACT
+    ========================== -->
+
+    <section id="contact" class="content-section">
+
+        <h1 class="section-title">
+
+            Contact Me
+
+        </h1>
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-envelope fa-2x"></i>
+
+                <h3>Email</h3>
+
+                <p>
+
+                    harish.t7708@gmail.com
+
+                </p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-location-dot fa-2x"></i>
+
+                <h3>Location</h3>
+
+                <p>
+
+                    Puducherry, India
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social-container">
+
+            <div class="social-item">
+
+                <a href="https://github.com/harish-t24"
+                    target="_blank"
+                    class="social-box github">
+
+                    <i class="fab fa-github fa-2x"></i>
+
+                </a>
+
+                <p>GitHub</p>
+
+            </div>
+
+            <div class="social-item">
+
+                <a href="https://www.linkedin.com/in/harish-t7708"
+                    target="_blank"
+                    class="social-box linkedin">
+
+                    <i class="fab fa-linkedin fa-2x"></i>
+
+                </a>
+
+                <p>LinkedIn</p>
+
+            </div>
+
+            <div class="social-item">
+
+                <a href="https://wa.me/917708911399"
+                    target="_blank"
+                    class="social-box whatsapp">
+
+                    <i class="fab fa-whatsapp fa-2x"></i>
+
+                </a>
+
+                <p>WhatsApp</p>
+
+            </div>
+
+            <div class="social-item">
+
+                <a href="https://www.instagram.com/harish.t_24"
+                    target="_blank"
+                    class="social-box instagram">
+
+                    <i class="fab fa-instagram fa-2x"></i>
+
+                </a>
+
+                <p>Instagram</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BACK TO TOP -->
+
+    <button id="topBtn">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Harish T |
+
+            Designed & Developed using HTML, CSS & JavaScript
+
+        </p>
+
     </footer>
+
+
+
+    <!-- =========================
+            JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+  
+<button id="topBtn" title="Back to Top">
+    ↑
+</button>
 </body>
+
 </html>
