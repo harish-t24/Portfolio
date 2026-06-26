@@ -61,6 +61,23 @@ window.addEventListener("load", () => {
 
 });
 
+/* ==========================================
+   LOADER
+========================================== */
+
+window.addEventListener("load",()=>{
+
+    const loader=document.querySelector(".loader");
+
+    setTimeout(()=>{
+
+        loader.style.opacity="0";
+
+        loader.style.visibility="hidden";
+
+    },1800);
+
+});
 // ==============================
 // BACK TO TOP BUTTON
 // ==============================

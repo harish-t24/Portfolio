@@ -1614,3 +1614,189 @@ h2{
     background:#3b82f6;
     transform:translateY(-5px);
 }
+/* ==========================================
+   LOADER
+========================================== */
+
+.loader{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#0d1117;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    transition:opacity .8s ease,
+               visibility .8s ease;
+
+}
+
+.loader.hidden{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:34px;
+    font-weight:700;
+
+    color:white;
+
+    background:linear-gradient(135deg,#8b5cf6,#3b82f6);
+
+    box-shadow:
+        0 0 25px rgba(139,92,246,.6);
+
+    animation:pulse 1.5s infinite;
+
+}
+
+.loader-content h2{
+
+    margin-top:25px;
+
+    color:white;
+
+    font-size:30px;
+
+    letter-spacing:1px;
+
+}
+
+.loader-content p{
+
+    margin:12px 0 30px;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+}
+
+.loader-bar{
+
+    width:250px;
+
+    height:6px;
+
+    background:#1f2937;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.loader-bar span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#8b5cf6,#3b82f6);
+
+    animation:loading 2s linear forwards;
+
+}
+
+@keyframes loading{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .loader-logo{
+
+        width:75px;
+        height:75px;
+
+        font-size:28px;
+
+    }
+
+    .loader-content h2{
+
+        font-size:24px;
+
+    }
+
+    .loader-content p{
+
+        font-size:15px;
+
+    }
+
+    .loader-bar{
+
+        width:200px;
+
+    }
+
+}
