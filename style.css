@@ -3248,7 +3248,7 @@ position:fixed;
 
 left:50%;
 
-bottom:35px;
+bottom:55px;
 
 transform:translateX(-50%);
 
@@ -3262,7 +3262,7 @@ opacity:0;
 
 pointer-events:none;
 
-transition:.4s;
+transition:.10s;
 
 z-index:99999;
 
@@ -3272,7 +3272,7 @@ z-index:99999;
 
 opacity:1;
 
-bottom:60px;
+bottom:100px;
 
 }
 
