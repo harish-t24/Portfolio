@@ -116,35 +116,124 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
+    <!-- ===========================================
+                    CSS
+         (Will Continue in Next Parts)
+    ============================================ -->
+
+    <style>
+
+    :root{
+
+        --primary:#8b5cf6;
+        --secondary:#3b82f6;
+        --dark:#0d1117;
+        --card:#161b22;
+        --text:#ffffff;
+        --gray:#cbd5e1;
+        --radius:20px;
+
+    }
+
+    *{
+
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Poppins,sans-serif;
+
+    }
+
+    html{
+
+        scroll-behavior:smooth;
+
+    }
+
+    body{
+
+        background:var(--dark);
+
+        color:white;
+
+        overflow-x:hidden;
+
+    }
+
+    /* Remaining CSS will be added later */
+
+    </style>
+
 </head>
 
 <body>
 
-    <!-- =========================
+<!-- ===========================================
+                LOADER
+=========================================== -->
+
+
+
+
+<!-- ===========================================
+            AURORA BACKGROUND
+=========================================== -->
+
+<div class="aurora">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+<!-- ===========================================
             STAR BACKGROUND
-    ========================== -->
+=========================================== -->
 
-    <canvas id="stars"></canvas>
+<canvas id="stars"></canvas>
 
-    <!-- =========================
-            NAVBAR
-    ========================== -->
+<!-- ===========================================
+            CURSOR GLOW
+=========================================== -->
 
-    <nav>
+<div class="cursor-glow"></div>
 
-        <div class="logo">
-            Harish <span>T</span>
-        </div>
+<!-- ===========================================
+            PAGE PROGRESS
+=========================================== -->
 
-        <div class="menu-toggle" id="menu-toggle">
+<div id="progressBar"></div>
 
-            <span></span>
-            <span></span>
-            <span></span>
+<!-- ===========================================
+                NAVBAR
+=========================================== -->
 
-        </div>
+<nav>
 
-        <ul id="nav-links">
+    <div class="logo">
+
+        Harish
+
+        <span>
+
+            T
+
+        </span>
+
+    </div>
+
+    <div id="menu-toggle">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+    <ul id="nav-links">
 
             <li>
                 <a class="active" onclick="showSection('home',event)">
@@ -155,6 +244,12 @@
             <li>
                 <a onclick="showSection('about',event)">
                     About
+                </a>
+            </li>
+
+            <li>
+                <a onclick="showSection('services',event)">
+                    Services
                 </a>
             </li>
 
@@ -196,167 +291,760 @@
 
         </ul>
 
-    </nav>
+</nav>
 
-    <!-- =========================
-            HOME SECTION
-    ========================== -->
+<!-- ===========================================
+                HOME
+=========================================== -->
 
-    <section id="home" class="content-section">
+<section
+id="home"
+class="content-section">
 
-        <div class="intro-section">
+<div class="hero">
 
-            <div class="intro-text">
+<div class="hero-left">
 
-                <h3>Hello 👋 I'm</h3>
+<h3>
 
-                <h1>
-                    Harish <span class="highlight">T</span>
-                </h1>
+Hello 👋 I'm
 
-                <h2>
+</h3>
 
-                    <span class="highlight-purple">
-                        Full Stack Developer
-                    </span>
+<h1>
 
-                </h2>
+Harish
 
-                <p>
+<span>
 
-                    Passionate Full Stack Developer and Computer Science Engineering student
-                    specializing in Python, Flask, React.js, JavaScript, SQL, and AI-powered
-                    web applications.
+T
 
-                    I enjoy building scalable, responsive, and user-friendly applications
-                    that solve real-world problems.
+</span>
 
-                </p>
+</h1>
 
-                <div class="hero-buttons">
+<h2>
 
-                    <a onclick="showSection('projects',event)"
-                        class="btn btn-primary">
+<span id="typing-text" class="highlight-purple"></span>
 
-                        View Projects
+</h2>
 
-                    </a>
+</h2>
 
-                    <a onclick="showSection('contact',event)"
-                        class="btn btn-outline">
+<p>
 
-                        Contact Me
+A passionate Full Stack Developer focused on
+building modern web applications,
+cloud-native systems,
+AI-powered solutions,
+and beautiful user experiences.
 
-                    </a>
+</p>
 
-                </div>
+<div class="hero-buttons">
 
-                <div class="hero-social">
+<a class="btn btn-primary">
 
-                    <a href="https://github.com/harish-t24"
-                        target="_blank">
+View Projects
 
-                        <i class="fab fa-github"></i>
+</a>
 
-                    </a>
+<a class="btn btn-outline">
 
-                    <a href="https://www.linkedin.com/in/harish-t7708"
-                        target="_blank">
+Hire Me
 
-                        <i class="fab fa-linkedin"></i>
+</a>
 
-                    </a>
+</div>
 
-                    <a href="https://www.instagram.com/harish.t_24"
-                        target="_blank">
+<div class="social-icons">
 
-                        <i class="fab fa-instagram"></i>
+<a href="https://github.com/harish-t24">
 
-                    </a>
+<i class="fab fa-github"></i>
 
-                    <a href="https://wa.me/917708911399"
-                        target="_blank">
+</a>
 
-                        <i class="fab fa-whatsapp"></i>
+<a href="https://www.linkedin.com/in/harish-t7708">
 
-                    </a>
+<i class="fab fa-linkedin"></i>
 
-                </div>
+</a>
 
-            </div>
+<a href="https://www.instagram.com/harish.t_24">
 
-            <div class="intro-image">
+<i class="fab fa-instagram"></i>
 
-                <img src="profile.jpeg"
-                    alt="Harish T">
+</a>
 
-            </div>
+<a href="https://wa.me/917708911399">
 
-        </div>
+<i class="fab fa-whatsapp"></i>
 
-    </section>
-        <!-- =========================
-            ABOUT SECTION
-    ========================== -->
+</a>
 
-    <section id="about" class="content-section">
+</div>
 
-        <h1 class="section-title">
-            About Me
-        </h1>
+<div class="hero-stats">
 
-        <div class="about-container">
+<div class="stat">
 
-            <h2>
-                Full Stack Developer
-            </h2>
+<h2
+class="counter"
+data-target="8.94">
 
-            <p>
+8.94
 
-                Hello! I'm <strong>Harish T</strong>, a passionate
-                <strong>Computer Science and Engineering</strong> student at
-                <strong>Rajiv Gandhi College of Engineering and Technology,
-                Puducherry</strong>.
+</h2>
 
-                <br><br>
+<p>
 
-                I specialize in building modern, responsive and scalable web
-                applications using
-                <strong>Python, Flask, React.js, HTML, CSS,
-                JavaScript, SQL and AI technologies.</strong>
+CGPA
 
-                <br><br>
+</p>
 
-                I enjoy solving real-world problems through technology and
-                continuously improving my programming, problem-solving and
-                leadership skills.
+</div>
 
-            </p>
+<div class="stat">
 
-            <br>
+<h2
+class="counter"
+data-target="10">
 
-            <h2>
-                Career Objective
-            </h2>
+4+
 
-            <p>
+</h2>
 
-                To obtain a challenging Software Developer position where I can
-                apply my technical knowledge, continuously learn new
-                technologies, and contribute to innovative software solutions.
+<p>
 
-            </p>
+Projects
 
-        </div>
+</p>
 
-    </section>
+</div>
+
+<div class="stat">
+
+<h2
+class="counter"
+data-target="2">
+
+2
+
+</h2>
+
+<p>
+
+Internships
+
+</p>
+
+</div>
+
+<div class="stat">
+
+<h2
+class="counter"
+data-target="5">
+
+5+
+
+</h2>
+
+<p>
+
+Certificates
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="image-wrapper">
+
+<img
+src="profile.jpeg"
+alt="Harish">
+
+<div class="ring"></div>
+
+<div class="ring ring2"></div>
+
+<div class="ring ring3"></div>
+
+</div>
+
+</div>
+
+</div>
 
 
-    <!-- =========================
-            SKILLS SECTION
-    ========================== -->
+</section>
+<!-- ==========================================================
+                        ABOUT SECTION
+=========================================================== -->
 
-    <section id="skills" class="content-section">
+<section
+id="about"
+class="content-section">
+
+<div class="section-header">
+
+<h5>
+
+WHO AM I
+
+</h5>
+
+<h1>
+
+About Me
+
+</h1>
+
+<p>
+
+A passionate Full Stack Developer who enjoys creating
+modern, scalable and user-friendly web applications.
+
+</p>
+
+</div>
+
+<div class="about-container">
+
+<div class="about-left">
+
+<div class="glass-card">
+
+<h2>
+
+Harish T
+
+</h2>
+
+<h3>
+
+Full Stack Developer
+
+</h3>
+
+<p>
+
+I am currently pursuing my Bachelor of Technology in
+Computer Science and Engineering.
+
+I specialize in
+
+<strong>
+
+Python,
+Flask,
+React,
+JavaScript,
+Cloud Computing,
+REST APIs,
+SQL,
+AI Applications
+
+</strong>
+
+and modern web development.
+
+</p>
+
+<p>
+
+My passion is transforming innovative ideas into
+beautiful digital products with responsive design,
+excellent performance and seamless user experience.
+
+</p>
+
+<div class="about-buttons">
+
+<a href="Harish_Resume.pdf"
+class="btn btn-primary">
+
+Download Resume
+
+</a>
+
+<a href="#contact"
+class="btn btn-outline">
+
+Let's Talk
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="about-right">
+
+<div class="profile-card">
+
+<div class="profile-top">
+
+<img
+src="profile.jpeg"
+alt="Harish">
+
+</div>
+
+<div class="profile-info">
+
+<div>
+
+<i class="fas fa-user"></i>
+
+<span>
+
+Harish T
+
+</span>
+
+</div>
+
+<div>
+
+<i class="fas fa-location-dot"></i>
+
+<span>
+
+Puducherry
+
+</span>
+
+</div>
+
+<div>
+
+<i class="fas fa-graduation-cap"></i>
+
+<span>
+
+B.Tech CSE
+
+</span>
+
+</div>
+
+<div>
+
+<i class="fas fa-laptop-code"></i>
+
+<span>
+
+Full Stack Developer
+
+</span>
+
+</div>
+
+<div>
+
+<i class="fas fa-cloud"></i>
+
+<span>
+
+Cloud Enthusiast
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================== -->
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+
+<i class="fas fa-code"></i>
+
+<h2>
+
+4+
+
+</h2>
+
+<p>
+
+Programming Languages
+
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<i class="fas fa-layer-group"></i>
+
+<h2>
+
+10+
+
+</h2>
+
+<p>
+
+Projects Completed
+
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<i class="fas fa-medal"></i>
+
+<h2>
+
+5+
+
+</h2>
+
+<p>
+
+Certifications
+
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<i class="fas fa-award"></i>
+
+<h2>
+
+2+
+
+</h2>
+
+<p>
+
+Internships
+
+</p>
+
+</div>
+
+</div>
+
+<div class="section-header">
+
+<h5>
+
+MY JOURNEY
+
+</h5>
+
+<h1>
+
+Career Timeline
+
+</h1>
+
+</div>
+
+<div class="journey-line">
+
+<div class="journey-item">
+
+<div class="circle"></div>
+
+<div class="journey-content">
+
+<h2>
+
+2023
+
+</h2>
+
+<p>
+
+Started B.Tech Computer Science Engineering.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="journey-item">
+
+<div class="circle"></div>
+
+<div class="journey-content">
+
+<h2>
+
+2024
+
+</h2>
+
+<p>
+
+Smart India Hackathon Participant.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="journey-item">
+
+<div class="circle"></div>
+
+<div class="journey-content">
+
+<h2>
+
+2025
+
+</h2>
+
+<p>
+
+Completed Web Development Internship.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="journey-item">
+
+<div class="circle"></div>
+
+<div class="journey-content">
+
+<h2>
+
+2026
+
+</h2>
+
+<p>
+
+Frontend Developer Internship &
+Cloud Computing Certification.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+                        SERVICES
+=========================================================== -->
+
+<section
+id="services"
+class="content-section">
+
+<div class="section-header">
+
+<h5>
+
+WHAT I DO
+
+</h5>
+
+<h1>
+
+Services
+
+</h1>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-icon">
+
+<i class="fas fa-code"></i>
+
+</div>
+
+<h2>
+
+Frontend Development
+
+</h2>
+
+<p>
+
+Responsive,
+Modern,
+Pixel Perfect,
+Interactive Websites.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+
+<i class="fas fa-server"></i>
+
+</div>
+
+<h2>
+
+Backend Development
+
+</h2>
+
+<p>
+
+Python,
+Flask,
+REST APIs,
+Authentication,
+Database Integration.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+
+<i class="fas fa-database"></i>
+
+</div>
+
+<h2>
+
+Database Design
+
+</h2>
+
+<p>
+
+MySQL,
+SQLite,
+MongoDB,
+CRUD,
+Optimization.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+
+<i class="fas fa-cloud"></i>
+
+</div>
+
+<h2>
+
+Cloud Computing
+
+</h2>
+
+<p>
+
+AWS,
+Cloud Deployment,
+Hosting,
+DevOps Learning.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+
+<i class="fas fa-robot"></i>
+
+</div>
+
+<h2>
+
+AI Applications
+
+</h2>
+
+<p>
+
+Gemini AI,
+OpenAI,
+Chatbots,
+Automation.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+
+<i class="fas fa-mobile-screen"></i>
+
+</div>
+
+<h2>
+
+Responsive Design
+
+</h2>
+
+<p>
+
+Desktop,
+Tablet,
+Mobile Friendly Interfaces.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+                        SKILLS
+=========================================================== -->
+
+<section id="skills" class="content-section">
 
         <h1 class="section-title">
             Technical Skills
@@ -468,95 +1156,98 @@
 
     </section>
 
+<!-- ==========================================================
+                        EDUCATION
+=========================================================== -->
 
-    <!-- =========================
-            EDUCATION
-    ========================== -->
+<section
+id="education"
+class="content-section">
 
-    <section id="education" class="content-section">
+<div class="section-header">
 
-        <h1 class="section-title">
-            Education
-        </h1>
+<h5>
 
-        <div class="education-container">
+EDUCATION
 
-            <div class="education-card">
+</h5>
 
-                <span class="education-year">
+<h1>
 
-                    2023 - 2027
+Academic Journey
 
-                </span>
+</h1>
 
-                <h2>
+</div>
 
-                    Bachelor of Technology
+<div class="timeline">
 
-                </h2>
+<div class="timeline-card">
 
-                <h3>
+<span>
 
-                    Computer Science & Engineering
+2023 - 2027
 
-                </h3>
+</span>
 
-                <p>
+<h2>
 
-                    Rajiv Gandhi College of Engineering & Technology,
-                    Puducherry
+B.Tech Computer Science
 
-                </p>
+</h2>
 
-                <br>
+<h3>
 
-                <p>
+Rajiv Gandhi College of Engineering & Technology
 
-                    CGPA :
-                    <strong>8.94 / 10</strong>
+</h3>
 
-                </p>
+<p>
 
-            </div>
+CGPA : 8.94 / 10
+
+</p>
+
+</div>
+
+<div class="timeline-card">
+
+<span>
+
+2023
+
+</span>
+
+<h2>
+
+Higher Secondary
+
+</h2>
+
+<h3>
+
+Achariya Siksha Mandir
+
+</h3>
+
+<p>
+
+81%
+
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
-            <div class="education-card">
+<!-- ==========================================================
+                        PROJECTS
+=========================================================== -->
 
-                <span class="education-year">
-
-                    2023
-
-                </span>
-
-                <h2>
-
-                    Higher Secondary Education
-
-                </h2>
-
-                <h3>
-
-                    Achariya Siksha Mandir Hr. Sec. School
-
-                </h3>
-
-                <p>
-
-                    Percentage :
-                    <strong>81%</strong>
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-        <!-- =========================
-            PROJECTS
-    ========================== -->
-
-    <section id="projects" class="content-section">
+<section id="projects" class="content-section">
 
         <h1 class="section-title">
             My Projects
@@ -739,224 +1430,349 @@
 
     </section>
 
+<!-- ==========================================================
+                        GITHUB
+=========================================================== -->
 
+<section
+id="github"
+class="content-section">
 
+<div class="section-header">
 
+<h5>
 
-    <!-- =========================
-            EXPERIENCE
-    ========================== -->
+OPEN SOURCE
 
-    <section id="experience" class="content-section">
+</h5>
 
-        <h1 class="section-title">
+<h1>
 
-            Experience
+GitHub Dashboard
 
-        </h1>
+</h1>
 
-        <div class="experience-container">
+</div>
 
-            <div class="experience-card">
+<div class="github-container">
 
-                <span class="experience-duration">
+<img
 
-                    March 2026 - Present
+src="https://github-readme-stats.vercel.app/api?username=harish-t24&show_icons=true&theme=tokyonight"
 
-                </span>
+class="github-card">
 
-                <h2>
+<img
 
-                    Front-End Developer Intern
+src="https://github-readme-stats.vercel.app/api/top-langs/?username=harish-t24&layout=compact&theme=tokyonight"
 
-                </h2>
+class="github-card">
 
-                <h3>
+<img
 
-                    Shine Craft Technologies
+src="https://ghchart.rshah.org/harish-t24"
 
-                </h3>
+class="github-card">
 
-                <p>
+</div>
 
-                    • Functional testing of Gold Loan Web Application.
+<div id="repos">
 
-                    <br><br>
+</div>
 
-                    • Developed React-based Feedback Form.
+</section>
 
-                    <br><br>
+<!-- ==========================================================
+                        CERTIFICATES
+=========================================================== -->
 
-                    • Built Flask + Electron File Management System.
+<section
+id="certificates"
+class="content-section">
 
-                    <br><br>
+<div class="section-header">
 
-                    • Worked with CRUD Operations and Desktop Applications.
+<h5>
 
-                </p>
+ACHIEVEMENTS
 
-            </div>
+</h5>
 
+<h1>
 
+Certificates
 
-            <div class="experience-card">
+</h1>
 
-                <span class="experience-duration">
+</div>
 
-                    1 Month
+<div class="certificate-grid">
 
-                </span>
+<div class="certificate-card">
 
-                <h2>
+<i class="fas fa-award"></i>
 
-                    Web Development Intern
+<h2>
 
-                </h2>
+Python for Data Science
 
-                <h3>
+</h2>
 
-                    Cognifyz Technologies
+<p>
 
-                </h3>
+NPTEL Elite + Silver
 
-                <p>
+</p>
 
-                    • Responsive Web Development
+</div>
 
-                    <br><br>
+<div class="certificate-card">
 
-                    • HTML & CSS Projects
+<i class="fas fa-cloud"></i>
 
-                    <br><br>
+<h2>
 
-                    • API Integration
+Cloud Computing
 
-                    <br><br>
+</h2>
 
-                    • Interactive User Interface
+<p>
 
-                </p>
+NPTEL Elite
 
-            </div>
+</p>
 
-        </div>
+</div>
 
-    </section>
+<div class="certificate-card">
 
+<i class="fas fa-laptop-code"></i>
 
+<h2>
 
+Frontend Internship
 
+</h2>
 
-    <!-- =========================
-            ACHIEVEMENTS
-    ========================== -->
+<p>
 
-    <section id="achievements" class="content-section">
+Shine Craft Technologies
 
-        <h1 class="section-title">
+</p>
 
-            Achievements
+</div>
 
-        </h1>
+<div class="certificate-card">
 
-        <div class="projects-container">
+<i class="fas fa-medal"></i>
 
-            <div class="project-card">
+<h2>
 
-                <h2>
+Web Development
 
-                    Smart India Hackathon 2024
+</h2>
 
-                </h2>
+<p>
 
-                <p>
+Cognifyz Technologies
 
-                    Participated in SIH 2024 by proposing an AI-powered Tourism
-                    Recommendation Platform for Tamil Nadu.
+</p>
 
-                </p>
+</div>
 
-            </div>
+</div>
 
-            <div class="project-card">
+</section>
 
-                <h2>
+<!-- ==========================================================
+                        EXPERIENCE
+=========================================================== -->
 
-                    Class Representative
+<section
+id="experience"
+class="content-section">
 
-                </h2>
+<div class="section-header">
 
-                <p>
+<h5>
 
-                    Serving as Class Representative and coordinating academic
-                    activities while improving leadership and communication
-                    skills.
+CAREER
 
-                </p>
+</h5>
 
-            </div>
+<h1>
 
-            <div class="project-card">
+Experience
 
-                <h2>
+</h1>
 
-                    Full Stack Development
+</div>
 
-                </h2>
+<div class="experience-grid">
 
-                <p>
+<div class="experience-card">
 
-                    Developed multiple Full Stack Web Applications using Flask,
-                    React.js, Python, SQLAlchemy, Bootstrap and AI APIs.
+<h2>
 
-                </p>
+Frontend Developer Intern
 
-            </div>
+</h2>
 
-        </div>
+<h3>
 
-    </section>
-        <!-- =========================
-            RESUME
-    ========================== -->
+Shine Craft Technologies
 
-    <section id="resume" class="content-section">
+</h3>
 
-        <h1 class="section-title">
-            Resume
-        </h1>
+<span>
 
-        <div class="resume-container">
+2026 - Present
 
-            <img src="Resume_page1.png"
-                class="resume-img"
-                alt="Resume Page 1">
+</span>
 
-            <img src="Resume_page2.png"
-                class="resume-img"
-                alt="Resume Page 2">
+<ul>
 
-        </div>
+<li>
 
-        <center>
+Functional Testing
 
-            <a href="Harish_Resume.pdf"
-                download
-                class="download-btn">
+</li>
 
-                <i class="fa-solid fa-download"></i>
+<li>
 
-                Download Resume
+React Development
 
-            </a>
+</li>
 
-        </center>
+<li>
 
-    </section>
+Flask Desktop App
 
+</li>
 
+<li>
 
-    <!-- =========================
+CRUD Operations
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="experience-card">
+
+<h2>
+
+Frontend Development Intern
+
+</h2>
+
+<h3>
+
+Cognifyz Technologies
+
+</h3>
+
+<span>
+
+1 Month
+
+</span>
+
+<ul>
+
+<li>
+
+Responsive Website
+
+</li>
+
+<li>
+
+HTML CSS
+
+</li>
+
+<li>
+
+JavaScript
+
+</li>
+
+<li>
+
+REST API
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+                        RESUME
+=========================================================== -->
+
+<section
+id="resume"
+class="content-section">
+
+<div class="section-header">
+
+<h5>
+
+DOWNLOAD
+
+</h5>
+
+<h1>
+
+Resume
+
+</h1>
+
+</div>
+
+<div class="resume-wrapper">
+
+<img
+
+src="Resume_page1.png"
+
+class="resume-preview">
+
+<img
+
+src="Resume_page2.png"
+
+class="resume-preview">
+
+</div>
+
+<div class="resume-download">
+<a
+href="Harish_Resume.pdf"
+
+download
+
+class="btn btn-primary">
+
+<i class="fas fa-download"></i>  
+
+  Download Resume
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================
             CONTACT
     ========================== -->
 
@@ -977,7 +1793,7 @@
                 <h3>Email</h3>
 
                 <a href="mailto:harish.t7708@gmail.com">
-                <i class="fas fa-envelope"></i>
+                
                 harish.t7708@gmail.com
                 </a>
 
@@ -1077,68 +1893,139 @@
 
     </section>
 
+<!-- ==========================================================
+                        FOOTER
+=========================================================== -->
 
+<footer>
 
-    <!-- BACK TO TOP -->
+<div class="footer-logo">
 
-    <button id="topBtn">
-
-        ↑
-
-    </button>
-
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-
-            © 2026 Harish T |
-
-            Designed & Developed using HTML, CSS & JavaScript
-
-        </p>
-
-    </footer>
-
-
-
-    <!-- =========================
-            JAVASCRIPT
-    ========================== -->
-
-    <script src="script.js"></script>
-  
-<!-- ===== Loader ===== -->
-
-<div class="loader">
-
-    <div class="loader-content">
-
-        <div class="loader-logo">
-
-            HT
-
-        </div>
-
-        <h2>Harish T</h2>
-
-        <p>Loading Portfolio...</p>
-
-        <div class="loader-bar">
-
-            <span></span>
-
-        </div>
-
-    </div>
+Harish T
 
 </div>
-<button id="topBtn" title="Back to Top">
-    ↑
+
+<p>
+
+Full Stack Developer • Python • Cloud • AI
+
+</p>
+
+<div class="footer-social">
+
+<a href="https://github.com/harish-t24">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="https://www.linkedin.com/in/harish-t7708">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="https://www.instagram.com/harish.t_24">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="https://wa.me/917708911399">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+<p>
+
+© 2026 Harish T
+
+All Rights Reserved.
+
+</p>
+
+</footer>
+
+<!-- ==========================================================
+                    FLOATING BUTTONS
+=========================================================== -->
+
+<button id="topBtn">
+
+<i class="fas fa-arrow-up"></i>
+
 </button>
+
+<a
+
+href="Harish_Resume.pdf"
+
+download
+
+class="floating-resume">
+
+<i class="fas fa-download"></i>
+
+Resume
+
+</a>
+
+<!-- ==========================================================
+                    TOAST
+=========================================================== -->
+
+<div id="toast">
+
+Welcome to My Portfolio 👋
+
+</div>
+
+<!-- ==========================================================
+                    PROJECT MODAL
+=========================================================== -->
+
+<div
+
+id="projectModal"
+
+class="modal">
+
+<div class="modal-content">
+
+<span
+
+class="close"
+
+onclick="closeModal()">
+
+×
+
+</span>
+
+<h2
+id="modalTitle">
+
+</h2>
+
+<p
+id="modalBody">
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+                JAVASCRIPT
+(Will be added in final part)
+=========================================================== -->
+
+<script src="script.js"></script>
+
 </body>
 
 </html>
