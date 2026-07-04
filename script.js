@@ -84,21 +84,36 @@ window.addEventListener("load", () => {
 });
 
 
-// ==========================================
-// LOADER
-// ==========================================
-window.addEventListener("load", () => {
+const loader = document.getElementById("loader");
+const fill = document.getElementById("loaderFill");
+const percent = document.getElementById("loadingPercent");
 
-    const loader = document.querySelector(".loader");
+if (loader && fill && percent) {
 
-    if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = "0";
-            loader.style.visibility = "hidden";
-        }, 1800);
-    }
+    let value = 0;
 
-});
+    const loading = setInterval(() => {
+
+        value++;
+
+        fill.style.width = value + "%";
+        percent.textContent = value + "%";
+
+        if (value >= 100) {
+
+            clearInterval(loading);
+
+            setTimeout(() => {
+
+                loader.classList.add("hide");
+
+            }, 300);
+
+        }
+
+    }, 20);
+
+}
 
 
 /* ==========================================================
@@ -268,49 +283,6 @@ menuToggle.classList.toggle("open");
 
 
 
-
-
-/* ==========================================================
-                CURSOR GLOW
-========================================================== */
-
-if(cursorGlow){
-
-window.addEventListener("mousemove",e=>{
-
-cursorGlow.style.left=e.clientX+"px";
-
-cursorGlow.style.top=e.clientY+"px";
-
-});
-
-}
-
-/* ==========================================================
-                PROGRESS BAR
-========================================================== */
-
-window.addEventListener("scroll",()=>{
-
-const total=
-
-document.documentElement.scrollHeight
-
--
-
-window.innerHeight;
-
-const progress=
-
-(window.scrollY/total)*100;
-
-progressBar.style.width=
-
-progress+"%";
-
-});
-
-
 /* ==========================================================
                 NAVBAR SCROLL EFFECT
 ========================================================== */
@@ -336,52 +308,6 @@ nav.style.background=
 "rgba(20,20,25,.65)";
 
 }
-
-});
-
-/* ==========================================================
-                SCROLL SPY
-========================================================== */
-
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(section=>{
-
-const top=
-
-section.offsetTop-150;
-
-if(pageYOffset>=top){
-
-current=section.id;
-
-}
-
-});
-
-navItems.forEach(link=>{
-
-link.classList.remove("active");
-
-if(
-
-link.textContent
-
-.toLowerCase()
-
-===
-
-current
-
-){
-
-link.classList.add("active");
-
-}
-
-});
 
 });
 
