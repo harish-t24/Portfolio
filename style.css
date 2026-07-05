@@ -3147,47 +3147,57 @@ transform:translateY(-8px);
 /* ==========================================================
                     BACK TO TOP
 ========================================================== */
-
 #topBtn{
 
-position:fixed;
+    position:fixed;
 
-right:25px;
+    right:25px;
 
-bottom:25px;
+    bottom:25px;
 
-width:58px;
+    width:60px;
 
-height:58px;
+    height:60px;
 
-border:none;
+    display:flex;
 
-border-radius:50%;
+    justify-content:center;
 
-background:linear-gradient(
-135deg,
-#8b5cf6,
-#3b82f6);
+    align-items:center;
 
-color:white;
+    border:none;
 
-font-size:22px;
+    border-radius:50%;
 
-display:none;
+    background:linear-gradient(135deg,#8b5cf6,#3b82f6);
 
-cursor:pointer;
+    color:#fff;
 
-z-index:999;
+    font-size:22px;
 
-transition:.35s;
+    cursor:pointer;
 
-box-shadow:0 10px 25px rgba(139,92,246,.35);
+    z-index:999;
+
+    transition:.35s ease;
+
+    box-shadow:0 10px 25px rgba(139,92,246,.35);
+
+}
+
+#topBtn i{
+
+    font-size:24px;
+
+    line-height:1;
 
 }
 
 #topBtn:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(139,92,246,.5);
 
 }
 
