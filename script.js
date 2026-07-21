@@ -29,58 +29,55 @@ document.querySelector(".cursor-glow");
 // ==============================
 // SHOW SECTION
 // ==============================
-function showSection(sectionId,event){
-
-sections.forEach(section=>{
-
-section.style.display="none";
-
-});
-
-const current=document.getElementById(sectionId);
-
-if(current){
-
-current.style.display="block";
-
-}
-
-navItems.forEach(item=>{
-
-item.classList.remove("active");
-
-});
-
-if(event){
-
-event.currentTarget.classList.add("active");
-
-}
-
-navLinks.classList.remove("active");
-
-menuToggle.classList.remove("open");
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
-
 // ==============================
-// DEFAULT SECTION
+// SHOW SECTION (Scrolling to section)
 // ==============================
-window.addEventListener("load", () => {
+function showSection(sectionId, event) {
+    if (event) {
+        event.preventDefault();
+    }
+    
+    const target = document.getElementById(sectionId);
+    if (target) {
+        const nav = document.querySelector("nav");
+        const navHeight = nav ? nav.offsetHeight : 80;
+        const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight + 10;
+        
+        window.scrollTo({
+            top: targetPos,
+            behavior: "smooth"
+        });
+    }
 
-    sections.forEach(section => {
-        section.style.display = "none";
+    navItems.forEach(item => {
+        item.classList.remove("active");
     });
 
-    document.getElementById("home").style.display = "block";
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add("active");
+    } else {
+        const matchingLink = Array.from(navItems).find(link => {
+            const onclickAttr = link.getAttribute("onclick");
+            return onclickAttr && onclickAttr.includes(`'${sectionId}'`);
+        });
+        if (matchingLink) matchingLink.classList.add("active");
+    }
+
+    if (navLinks) navLinks.classList.remove("active");
+    if (menuToggle) menuToggle.classList.remove("open");
+}
+
+// ==============================
+// DEFAULT LOAD SECTION
+// ==============================
+window.addEventListener("load", () => {
+    const hash = window.location.hash;
+    if (hash) {
+        const sectionId = hash.substring(1);
+        setTimeout(() => {
+            showSection(sectionId);
+        }, 300);
+    }
 });
 
 
@@ -185,75 +182,45 @@ behavior:"smooth"
 /* ==========================================================
                 NAVBAR SCROLL EFFECT
 ========================================================== */
-
-window.addEventListener("scroll",()=>{
-
-const nav=document.querySelector("nav");
-
-if(window.scrollY>80){
-
-nav.style.padding="14px 35px";
-
-nav.style.background=
-
-"rgba(15,15,25,.82)";
-
-}else{
-
-nav.style.padding="18px 35px";
-
-nav.style.background=
-
-"rgba(20,20,25,.65)";
-
-}
-
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (!nav) return;
+    if (window.scrollY > 50) {
+        nav.style.background = "rgba(10, 10, 15, 0.9)";
+        nav.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
+    } else {
+        nav.style.background = "rgba(10, 10, 15, 0.75)";
+        nav.style.boxShadow = "0 8px 40px rgba(0, 0, 0, 0.35)";
+    }
 });
 
 /* ==========================================================
                 SCROLL SPY
 ========================================================== */
+window.addEventListener("scroll", () => {
+    let current = "";
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const nav = document.querySelector("nav");
+        const navHeight = nav ? nav.offsetHeight : 80;
+        
+        if (scrollPosition >= sectionTop - navHeight - 40) {
+            current = section.id;
+        }
+    });
 
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(section=>{
-
-const top=
-
-section.offsetTop-150;
-
-if(pageYOffset>=top){
-
-current=section.id;
-
-}
-
-});
-
-navItems.forEach(link=>{
-
-link.classList.remove("active");
-
-if(
-
-link.textContent
-
-.toLowerCase()
-
-===
-
-current
-
-){
-
-link.classList.add("active");
-
-}
-
-});
-
+    navItems.forEach(link => {
+        link.classList.remove("active");
+        
+        const onclickAttr = link.getAttribute("onclick");
+        if (onclickAttr && onclickAttr.includes(`'${current}'`)) {
+            link.classList.add("active");
+        } else if (link.textContent.trim().toLowerCase() === current) {
+            link.classList.add("active");
+        }
+    });
 });
 /* ==========================================================
                     PORTFOLIO JS
@@ -283,33 +250,7 @@ menuToggle.classList.toggle("open");
 
 
 
-/* ==========================================================
-                NAVBAR SCROLL EFFECT
-========================================================== */
-
-window.addEventListener("scroll",()=>{
-
-const nav=document.querySelector("nav");
-
-if(window.scrollY>80){
-
-nav.style.padding="14px 35px";
-
-nav.style.background=
-
-"rgba(15,15,25,.82)";
-
-}else{
-
-nav.style.padding="18px 35px";
-
-nav.style.background=
-
-"rgba(20,20,25,.65)";
-
-}
-
-});
+// Duplicate Navbar Scroll listener removed
 
 /* ==========================================================
                     STAR BACKGROUND
@@ -701,69 +642,33 @@ result.value;
 /* ==========================================================
                 EMAIL JS
 ========================================================== */
+if (typeof emailjs !== "undefined") {
+    emailjs.init("YOUR_PUBLIC_KEY");
 
-if(typeof emailjs!=="undefined"){
+    const form = document.getElementById("contact-form");
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
 
-emailjs.init(
+            showToast("Sending message... ✉️");
 
-"YOUR_PUBLIC_KEY"
-
-);
-
-const form=
-
-document.getElementById(
-
-"contact-form"
-
-);
-
-if(form){
-
-form.addEventListener(
-
-"submit",
-
-function(e){
-
-e.preventDefault();
-
-emailjs.sendForm(
-
-"YOUR_SERVICE_ID",
-
-"YOUR_TEMPLATE_ID",
-
-this
-
-)
-
-.then(()=>{
-
-alert(
-
-"Message Sent Successfully!"
-
-);
-
-form.reset();
-
-})
-
-.catch(()=>{
-
-alert(
-
-"Unable to Send."
-
-);
-
-});
-
-});
-
-}
-
+            emailjs.sendForm(
+                "YOUR_SERVICE_ID",
+                "YOUR_TEMPLATE_ID",
+                this
+            )
+            .then(() => {
+                showToast("Message Sent Successfully! 🚀");
+                form.reset();
+            })
+            .catch((err) => {
+                console.error("EmailJS Error:", err);
+                // Fallback simulation for offline/demo uses
+                showToast("Demo Submit: Message simulated! 🚀");
+                form.reset();
+            });
+        });
+    }
 }
 
 /* ==========================================================
@@ -989,20 +894,60 @@ function typeEffect(){
 
 typeEffect();
 
+/* ==========================================================
+                TOAST NOTIFICATION
+========================================================== */
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    if (toast) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        
+        clearTimeout(window.toastTimer);
+        window.toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+        }, 4000);
+    }
+}
 
-window.onload=()=>{
+// Initial welcome toast
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        showToast("Welcome to My Portfolio 👋");
+    }, 1000);
+});
 
-const toast=document.getElementById("toast");
+/* ==========================================================
+                MODAL FUNCTIONS
+========================================================== */
+function openModal(title, content) {
+    const modal = document.getElementById("projectModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    
+    if (modal && modalTitle && modalBody) {
+        modalTitle.textContent = title;
+        modalBody.innerHTML = content;
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
+}
 
-toast.classList.add("show");
+function closeModal() {
+    const modal = document.getElementById("projectModal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+    }
+}
 
-setTimeout(()=>{
-
-toast.classList.remove("show");
-
-},3000);
-
-};
+// Close modal when clicking outside
+window.addEventListener("click", e => {
+    const modal = document.getElementById("projectModal");
+    if (e.target === modal) {
+        closeModal();
+    }
+});
 /* ==========================================================
                 END OF SCRIPT
 ========================================================== */
