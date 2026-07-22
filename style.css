@@ -4135,3 +4135,399 @@ img{
     transform: translateX(3px);
     color: var(--primary);
 }
+
+/* ==========================================================
+      ULTIMATE MOBILE RESPONSIVE & TOUCH DESIGN SYSTEM
+========================================================== */
+
+/* Prevent gray highlight box on mobile tap */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Touch Active Feedback */
+.btn:active,
+.project-btn-outline:active,
+.social-card-item:active,
+.mobile-nav-item:active,
+#topBtn:active {
+    transform: scale(0.96) !important;
+}
+
+/* Hamburger Icon & Touch Button Animation */
+#menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+}
+
+#menu-toggle:hover,
+#menu-toggle:active {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+#menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: #ffffff;
+    border-radius: 4px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#menu-toggle.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+    background: #a78bfa;
+}
+
+#menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-12px);
+}
+
+#menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+    background: #a78bfa;
+}
+
+/* ==========================================================
+            MOBILE BOTTOM QUICK NAV DOCK
+========================================================== */
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92%, 440px);
+        height: 60px;
+        background: rgba(13, 17, 23, 0.88);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(139, 92, 246, 0.25);
+        border-radius: 35px;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 99999;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(139, 92, 246, 0.2);
+        padding: 0 8px;
+    }
+
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #94a3b8;
+        font-size: 11px;
+        font-weight: 500;
+        gap: 3px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-item i {
+        font-size: 17px;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .mobile-nav-item:hover,
+    .mobile-nav-item.active {
+        color: #a78bfa;
+    }
+
+    .mobile-nav-item.active i {
+        transform: translateY(-2px) scale(1.15);
+        color: #8b5cf6;
+        filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.7));
+    }
+
+    /* Position Top Button above mobile bottom dock */
+    #topBtn {
+        bottom: 85px !important;
+        right: 15px !important;
+    }
+}
+
+/* ==========================================================
+      MEDIA QUERIES FOR MENU & CONTACT RESPONSIVENESS
+========================================================== */
+
+@media screen and (max-width: 992px) {
+    /* Contact Section Layout for Tablets & Below */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 35px;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+    }
+
+    .contact-card {
+        padding: 24px 18px;
+        text-align: center;
+    }
+
+    .contact-card p,
+    .contact-card a {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    #menu-toggle {
+        display: flex;
+    }
+
+    #nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: rgba(17, 24, 39, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+        border-radius: 0 0 24px 24px;
+        flex-direction: column;
+        gap: 4px;
+        padding: 15px 20px;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    #nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    #nav-links li {
+        width: 100%;
+    }
+
+    #nav-links a {
+        display: block;
+        padding: 12px 16px;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #cbd5e1;
+        transition: 0.25s ease;
+    }
+
+    #nav-links a:hover,
+    #nav-links a.active {
+        background: rgba(139, 92, 246, 0.18);
+        color: #ffffff;
+    }
+
+    /* Contact Section Mobile Polish */
+    .contact-form-card {
+        padding: 26px 20px;
+        border-radius: 20px;
+    }
+
+    .contact-form-card h2 {
+        font-size: clamp(22px, 5vw, 26px);
+    }
+
+    .contact-form-card p {
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+
+    .social-grid {
+        gap: 12px;
+    }
+
+    .social-card-item {
+        padding: 14px 16px;
+        border-radius: 14px;
+    }
+
+    .social-icon-box {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        margin-right: 14px;
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
+
+    .social-details h3 {
+        font-size: 15px;
+    }
+
+    .social-details span {
+        font-size: 12px;
+        word-break: break-all;
+    }
+
+    /* Section Typography & Spacing */
+    .content-section {
+        padding: 100px 18px 60px;
+    }
+
+    .section-header h1,
+    .section-title {
+        font-size: clamp(26px, 7vw, 36px);
+    }
+
+    /* Hero Responsive */
+    .hero-left h1 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .hero-left h2 {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .hero-left p {
+        font-size: 14px;
+    }
+
+    .image-wrapper {
+        width: min(240px, 75vw);
+        height: min(240px, 75vw);
+    }
+
+    .image-wrapper img {
+        width: min(190px, 60vw);
+        height: min(190px, 60vw);
+    }
+
+    .ring {
+        width: min(200px, 62vw);
+        height: min(200px, 62vw);
+    }
+
+    .ring2 {
+        width: min(230px, 71vw);
+        height: min(230px, 71vw);
+    }
+
+    .ring3 {
+        width: min(260px, 80vw);
+        height: min(260px, 80vw);
+    }
+
+    /* Input focus styling to prevent iOS auto zoom */
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+
+    /* Modal responsiveness */
+    .modal-content {
+        width: 92%;
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+}
+
+/* Extra Small Mobile Devices (Width <= 480px) */
+@media screen and (max-width: 480px) {
+    .content-section {
+        padding: 90px 14px 50px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 20px 14px;
+    }
+
+    .contact-card i:first-child {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .contact-form-card {
+        padding: 20px 14px;
+    }
+
+    .social-card-item {
+        padding: 12px 14px;
+    }
+
+    .social-icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .journey-line::before {
+        left: 14px;
+    }
+
+    .journey-item {
+        padding-left: 42px;
+    }
+
+    .circle {
+        left: 4px !important;
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -53,6 +53,9 @@ function showSection(sectionId, event) {
         item.classList.remove("active");
     });
 
+    const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+    mobileNavItems.forEach(item => item.classList.remove("active"));
+
     if (event && event.currentTarget) {
         event.currentTarget.classList.add("active");
     } else {
@@ -62,6 +65,12 @@ function showSection(sectionId, event) {
         });
         if (matchingLink) matchingLink.classList.add("active");
     }
+
+    const matchingBottomLink = Array.from(mobileNavItems).find(link => {
+        const href = link.getAttribute("href");
+        return href && href === `#${sectionId}`;
+    });
+    if (matchingBottomLink) matchingBottomLink.classList.add("active");
 
     if (navLinks) navLinks.classList.remove("active");
     if (menuToggle) menuToggle.classList.remove("open");
@@ -221,32 +230,42 @@ window.addEventListener("scroll", () => {
             link.classList.add("active");
         }
     });
-});
-/* ==========================================================
-                    PORTFOLIO JS
-========================================================== */
 
-"use strict";
-
-
-
-
-
-/* ==========================================================
-                    MOBILE MENU
-========================================================== */
-
-if(menuToggle){
-
-menuToggle.addEventListener("click",()=>{
-
-navLinks.classList.toggle("active");
-
-menuToggle.classList.toggle("open");
-
+    const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+    mobileNavItems.forEach(link => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (href === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
 });
 
+/* ==========================================================
+                    MOBILE MENU & BACKDROP TAP
+========================================================== */
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+        const nav = document.querySelector("nav");
+        if (navLinks.classList.contains("active") && nav && !nav.contains(e.target)) {
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("open");
+        }
+    });
 }
+
+
+
+
+
+// Duplicate Mobile Menu listener removed
 
 
 
